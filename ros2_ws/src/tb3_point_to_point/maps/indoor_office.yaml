@@ -1,0 +1,17 @@
+# Map of the indoor_office world, built by this project's autonomous SLAM run
+# (SLAM Toolbox + Nav2 exploration: bash demo.sh map). Frame = Gazebo world frame.
+# Origin = SLAM origin + (-0.05, -0.02) m floor-plan anchoring + (+0.034, +0.044) m AMCL calibration.
+#  * anchoring: the shift that best fits the mapped walls onto the floor plan
+#    (map_tools.align_to_reference); mapped walls are then on average 2.1 cm from the true walls.
+#  * calibration: AMCL places each map cell half a cell (2.5 cm) lower-left of where map_server and
+#    the costmaps put it. Compared with Gazebo ground truth over a full tour (354 AMCL updates) its
+#    estimate was off by (-3.4, -4.4) cm on average, the same sign everywhere on the floor; this
+#    shift removes that bias. (The static costmap layer moves by the same few cm - irrelevant
+#    next to its 0.6 m inflation.)
+image: indoor_office.pgm
+mode: trinary
+resolution: 0.05
+origin: [-5.966, -3.956, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

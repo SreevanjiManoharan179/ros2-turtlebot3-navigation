@@ -1,0 +1,2 @@
+Test,Route,Result,Time [s],Driven [m],Planned [m],Efficiency,Pos. error [m],Yaw error [deg],Recoveries,Min clearance [m]
+OB1,corridor_west -> corridor_east (+obstacle),SUCCEEDED,75.980,13.701,10.839,0.791,0.064,3.229,0.000,0.304

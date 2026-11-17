@@ -1,0 +1,7 @@
+Test,Route,Result,Time [s],Driven [m],Planned [m],Efficiency,Pos. error [m],Yaw error [deg],Recoveries,Min clearance [m]
+L1,current -> lab,SUCCEEDED,23.600,3.716,3.875,1.043,0.039,5.076,0.000,0.357
+L2,current -> office,SUCCEEDED,26.000,4.070,4.330,1.064,0.069,4.466,0.000,0.246
+L3,current -> meeting_room,SUCCEEDED,41.900,6.685,6.823,1.021,0.035,4.626,0.000,0.349
+L4,current -> storage,SUCCEEDED,44.800,8.013,8.386,1.047,0.061,1.605,0.000,0.326
+L5,current -> kitchen,SUCCEEDED,66.500,11.428,11.545,1.010,0.011,5.791,0.000,0.261
+L6,current -> reception,SUCCEEDED,25.300,3.685,3.965,1.076,0.037,5.408,0.000,0.328

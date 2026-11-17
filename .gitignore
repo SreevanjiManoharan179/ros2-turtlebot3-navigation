@@ -1,0 +1,25 @@
+# colcon build output (in-place builds)
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# written at run time by demo.sh (curated example runs live in docs/results/)
+/logs/
+/results/
+/maps/
+
+# demo videos are large: publish them as a GitHub Release asset instead
+demo/*.mp4
+demo/*.mkv
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+

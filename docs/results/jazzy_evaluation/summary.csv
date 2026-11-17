@@ -1,0 +1,9 @@
+Test,Route,Result,Time [s],Driven [m],Planned [m],Efficiency,Pos. error [m],Yaw error [deg],Recoveries,Min clearance [m]
+T1,reception -> lab,SUCCEEDED,24.652,3.877,13.111,3.382,0.059,1.806,0.000,0.318
+T2,lab -> office,SUCCEEDED,26.328,4.081,4.277,1.048,0.056,1.225,0.000,0.246
+T3,office -> meeting_room,SUCCEEDED,41.992,6.710,6.839,1.019,0.055,2.468,0.000,0.355
+T4,meeting_room -> storage,SUCCEEDED,44.716,7.996,8.322,1.041,0.055,3.877,0.000,0.324
+T5,storage -> kitchen,SUCCEEDED,65.552,11.370,11.307,0.994,0.025,0.597,0.000,0.272
+T6,kitchen -> reception,SUCCEEDED,28.552,3.686,4.140,1.123,0.076,5.031,0.000,0.310
+T7,reception -> meeting_room,SUCCEEDED,57.808,10.758,11.284,1.049,0.041,2.839,0.000,0.276
+T8,corridor_west -> corridor_east (+obstacle),SUCCEEDED,76.812,13.836,10.831,0.783,0.053,1.738,0.000,0.299

@@ -1,0 +1,7 @@
+trial_id,repeat,start,goal,start_room,goal_room,obstacle,result,success,navigation_time_s,path_length_m,planned_path_length_m,straight_line_m,path_efficiency,average_speed_mps,goal_x,goal_y,goal_yaw_deg,final_x,final_y,final_yaw_deg,final_position_error_m,final_yaw_error_deg,localization_error_m,recoveries,replans,min_obstacle_distance_m,min_clearance_m,ground_truth,note
+L1,1,,lab,,Lab,,SUCCEEDED,True,23.6000,3.7156,3.8750,3.4928,1.0429,0.1574,-3.0000,1.6000,90.0000,-3.0274,1.5726,84.9236,0.0387,5.0764,0.0375,0,0,0.4619,0.3569,gazebo,
+L2,1,,office,,Office,,SUCCEEDED,True,26.0000,4.0695,4.3298,3.6992,1.0639,0.1565,0.6000,2.3000,90.0000,0.5328,2.3171,94.4657,0.0693,4.4657,0.0571,0,0,0.3508,0.2458,gazebo,
+L3,1,,meeting_room,,Meeting Room,,SUCCEEDED,True,41.9000,6.6850,6.8228,2.2741,1.0206,0.1595,2.8000,2.5000,0.0000,2.7677,2.4875,-4.6260,0.0347,4.6260,0.0179,0,0,0.4538,0.3488,gazebo,
+L4,1,,storage,,Storage,,SUCCEEDED,True,44.8000,8.0128,8.3859,5.2915,1.0466,0.1789,3.9000,-2.6800,180.0000,3.9606,-2.6822,178.3952,0.0606,1.6048,0.0259,0,0,0.4313,0.3263,gazebo,
+L5,1,,kitchen,,Kitchen,,SUCCEEDED,True,66.5000,11.4279,11.5455,4.6102,1.0103,0.1718,-0.6500,-2.7000,180.0000,-0.6427,-2.7078,174.2092,0.0107,5.7908,0.0296,0,0,0.3663,0.2613,gazebo,
+L6,1,,reception,,Reception,,SUCCEEDED,True,25.3000,3.6846,3.9649,3.2888,1.0761,0.1456,-3.8000,-1.8000,0.0000,-3.7646,-1.8111,5.4085,0.0371,5.4085,0.0496,0,0,0.4326,0.3276,gazebo,

@@ -1,0 +1,64 @@
+# Missions for the mission_runner and explore_and_map nodes.
+# Goals refer to names in config/locations.yaml (or "x,y,yaw_deg").
+#
+#   ros2 run tb3_point_to_point mission_runner --scenario tour
+#   ros2 run tb3_point_to_point mission_runner --scenario evaluation
+#   ros2 run tb3_point_to_point mission_runner --scenario obstacle
+
+initial_pose: reception        # where missions without their own start pose (the tour) begin
+default_timeout_s: 240         # per goal, simulated seconds
+
+# 1) Demo: visit every room once, point to point, and come back to Reception.
+tour:
+  description: "Room-to-room tour: Reception -> Lab -> Office -> Meeting Room -> Storage -> Kitchen -> Reception"
+  legs: [lab, office, meeting_room, storage, kitchen, reception]
+
+# 2) The test table (each trial has a fixed start pose; the robot is moved there first).
+evaluation:
+  description: "Point-to-point test table T1-T8 (fixed start poses, unexpected obstacle in T8)"
+  repeat: 1
+  trials:
+    - {id: T1, start: reception,    goal: lab,          note: "Basic point to point: lobby opening -> corridor -> lab door"}
+    - {id: T2, start: lab,          goal: office,       note: "Short route through the internal Lab/Office door"}
+    - {id: T3, start: office,       goal: meeting_room, note: "Out to the corridor and into the neighbouring room"}
+    - {id: T4, start: meeting_room, goal: storage,      note: "Cross the corridor and enter the 0.95 m shelf aisle"}
+    - {id: T5, start: storage,      goal: kitchen,      note: "Back out of the aisle, go around the dining table"}
+    - {id: T6, start: kitchen,      goal: reception,    note: "Through the Kitchen/Reception internal door"}
+    - {id: T7, start: reception,    goal: meeting_room, note: "Longest route across the building"}
+    - {id: T8, start: corridor_west, goal: corridor_east, obstacle: corridor_block,
+       note: "Unmapped obstacle blocks the corridor: detect it with the LiDAR and re-plan through the rooms"}
+
+# 3) Obstacle challenge on its own (used by the demo menu).
+obstacle:
+  description: "An obstacle that is NOT in the map blocks the corridor; the robot must find another route"
+  trials:
+    - {id: OB1, start: corridor_west, goal: corridor_east, obstacle: corridor_block,
+       note: "Straight corridor run, blocked at x = -1.0 m: the LiDAR sees it and Nav2 re-plans a detour through the rooms"}
+
+obstacles:
+  corridor_block: {x: -1.0, y: 0.0, yaw_deg: 0.0, size: [0.5, 1.3, 0.6], color: [1.0, 0.45, 0.0]}
+
+# 4) Autonomous mapping route for explore_and_map (Nav2 + SLAM Toolbox, no prior map).
+exploration:
+  description: "Visit every room so SLAM Toolbox can map the whole floor"
+  waypoints:
+    # each waypoint lies inside the area the LiDAR has already seen, so Nav2 can plan to it
+    - [-3.8, -0.1, 90]      # corridor, opposite the reception opening
+    - [-5.2, 0.0, 180]      # corridor west end
+    - [-2.9, 0.0, 0]        # corridor at the lab door
+    - [-2.9, 1.6, 90]       # lab entrance
+    - [-3.0, 3.35, 180]     # lab, north side
+    - [-1.3, 2.45, 0]       # office, through the internal door
+    - [0.8, 2.2, -90]       # office centre
+    - [1.1, 0.0, 0]         # corridor centre
+    - [3.1, 0.0, 0]         # corridor at the meeting-room door
+    - [2.8, 2.0, 90]        # meeting room
+    - [2.8, 3.1, 0]         # meeting room, north side
+    - [5.2, 0.0, -90]       # corridor east end
+    - [5.1, -1.3, -90]      # storage entrance
+    - [3.9, -2.68, 180]     # storage aisle
+    - [0.7, -1.3, -90]      # kitchen entrance
+    - [1.9, -2.7, 180]      # kitchen east
+    - [-0.65, -2.7, 180]    # kitchen west
+    - [-2.3, -2.0, 180]     # reception, through the internal door
+    - [-3.8, -1.8, 0]       # back to the start
