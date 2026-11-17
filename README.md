@@ -14,7 +14,7 @@ truth. Everything runs from one menu, and every part is small enough to read and
 
 ![demo](docs/images/demo_preview.gif)
 
-**Full demo video (2 min):** see the [latest release](../../releases/latest) ·
+**Demo video (2 min):** [docs/media/indoor_p2p_navigation_demo.mp4](docs/media/indoor_p2p_navigation_demo.mp4) ·
 everything in it runs from one menu: `bash demo.sh`
 
 ## What you can learn here

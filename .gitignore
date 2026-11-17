@@ -8,7 +8,7 @@ ros2_ws/log/
 /results/
 /maps/
 
-# demo videos are large: publish them as a GitHub Release asset instead
+# local recordings (the demo video that ships is docs/media/indoor_p2p_navigation_demo.mp4)
 demo/*.mp4
 demo/*.mkv
 
